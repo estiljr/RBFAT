@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d641a94fa5c54ed0afccc0afca03fd5a" Name="Diagram1">
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tblAsset" Width="1.75" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tblEvent" Width="1.5" PointX="4.125" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tblEventSetting" Width="1.5" PointX="1.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tblFragilityCurveSet" Width="1.625" PointX="9.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tblLoadingLevel" Width="1.875" PointX="3.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tblLoadingLocation" Width="2" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tblLoadingScenario" Width="1.875" PointX="6.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tblRiskResult" Width="1.75" PointX="6.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tblRiskRun" Width="1.75" PointX="8.875" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tlkpAssetType" Width="1.75" PointX="3.625" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tlkpConditionGrade" Width="1.75" PointX="3.625" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tlkpFragilityCurve" Width="2" PointX="6.375" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetToolDatabaseModel.tlkpImpactType" Width="1.5" PointX="0.625" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tblAsset_tlkpAssetType" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tblAsset_tlkpConditionGrade" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tblEventSetting_tblAsset" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tblRiskResult_tblAsset" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tblEventSetting_tblEvents" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tblRiskRun_tblFragilityCurveSet" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tblFragilityCurveSet" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tblLoadingLevel_tblLoadingLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tblLoadingLevel_tblLoadingScenario" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tblRiskRun_tblLoadingScenario" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tblRiskResult_tblRiskRun" ManuallyRouted="false" />
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tlkpAssetType" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tlkpConditionGrade" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

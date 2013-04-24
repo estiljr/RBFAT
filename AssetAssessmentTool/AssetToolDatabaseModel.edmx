@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AssetToolDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AssetToolDatabaseModelStoreContainer">
+          <EntitySet Name="tblAsset" EntityType="AssetToolDatabaseModel.Store.tblAsset" store:Type="Tables" />
+          <EntitySet Name="tblEvents" EntityType="AssetToolDatabaseModel.Store.tblEvents" store:Type="Tables" />
+          <EntitySet Name="tblEventSetting" EntityType="AssetToolDatabaseModel.Store.tblEventSetting" store:Type="Tables" />
+          <EntitySet Name="tblFragilityCurveSet" EntityType="AssetToolDatabaseModel.Store.tblFragilityCurveSet" store:Type="Tables" />
+          <EntitySet Name="tblLoadingLevel" EntityType="AssetToolDatabaseModel.Store.tblLoadingLevel" store:Type="Tables" />
+          <EntitySet Name="tblLoadingLocation" EntityType="AssetToolDatabaseModel.Store.tblLoadingLocation" store:Type="Tables" />
+          <EntitySet Name="tblLoadingScenario" EntityType="AssetToolDatabaseModel.Store.tblLoadingScenario" store:Type="Tables" />
+          <EntitySet Name="tblRiskResult" EntityType="AssetToolDatabaseModel.Store.tblRiskResult" store:Type="Tables" />
+          <EntitySet Name="tblRiskRun" EntityType="AssetToolDatabaseModel.Store.tblRiskRun" store:Type="Tables" />
+          <EntitySet Name="tlkpAssetType" EntityType="AssetToolDatabaseModel.Store.tlkpAssetType" store:Type="Tables" />
+          <EntitySet Name="tlkpConditionGrade" EntityType="AssetToolDatabaseModel.Store.tlkpConditionGrade" store:Type="Tables" />
+          <EntitySet Name="tlkpFragilityCurve" EntityType="AssetToolDatabaseModel.Store.tlkpFragilityCurve" store:Type="Tables" />
+          <EntitySet Name="tlkpImpactType" EntityType="AssetToolDatabaseModel.Store.tlkpImpactType" store:Type="Tables" />
+          <AssociationSet Name="FK_tblAsset_tlkpAssetType" Association="AssetToolDatabaseModel.Store.FK_tblAsset_tlkpAssetType">
+            <End Role="tlkpAssetType" EntitySet="tlkpAssetType" />
+            <End Role="tblAsset" EntitySet="tblAsset" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAsset_tlkpConditionGrade" Association="AssetToolDatabaseModel.Store.FK_tblAsset_tlkpConditionGrade">
+            <End Role="tlkpConditionGrade" EntitySet="tlkpConditionGrade" />
+            <End Role="tblAsset" EntitySet="tblAsset" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblEventSetting_tblAsset" Association="AssetToolDatabaseModel.Store.FK_tblEventSetting_tblAsset">
+            <End Role="tblAsset" EntitySet="tblAsset" />
+            <End Role="tblEventSetting" EntitySet="tblEventSetting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblEventSetting_tblEvents" Association="AssetToolDatabaseModel.Store.FK_tblEventSetting_tblEvents">
+            <End Role="tblEvents" EntitySet="tblEvents" />
+            <End Role="tblEventSetting" EntitySet="tblEventSetting" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblLoadingLevel_tblLoadingLocation" Association="AssetToolDatabaseModel.Store.FK_tblLoadingLevel_tblLoadingLocation">
+            <End Role="tblLoadingLocation" EntitySet="tblLoadingLocation" />
+            <End Role="tblLoadingLevel" EntitySet="tblLoadingLevel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblLoadingLevel_tblLoadingScenario" Association="AssetToolDatabaseModel.Store.FK_tblLoadingLevel_tblLoadingScenario">
+            <End Role="tblLoadingScenario" EntitySet="tblLoadingScenario" />
+            <End Role="tblLoadingLevel" EntitySet="tblLoadingLevel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRiskResult_tblAsset" Association="AssetToolDatabaseModel.Store.FK_tblRiskResult_tblAsset">
+            <End Role="tblAsset" EntitySet="tblAsset" />
+            <End Role="tblRiskResult" EntitySet="tblRiskResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRiskResult_tblRiskRun" Association="AssetToolDatabaseModel.Store.FK_tblRiskResult_tblRiskRun">
+            <End Role="tblRiskRun" EntitySet="tblRiskRun" />
+            <End Role="tblRiskResult" EntitySet="tblRiskResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRiskRun_tblFragilityCurveSet" Association="AssetToolDatabaseModel.Store.FK_tblRiskRun_tblFragilityCurveSet">
+            <End Role="tblFragilityCurveSet" EntitySet="tblFragilityCurveSet" />
+            <End Role="tblRiskRun" EntitySet="tblRiskRun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRiskRun_tblLoadingScenario" Association="AssetToolDatabaseModel.Store.FK_tblRiskRun_tblLoadingScenario">
+            <End Role="tblLoadingScenario" EntitySet="tblLoadingScenario" />
+            <End Role="tblRiskRun" EntitySet="tblRiskRun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tlkpFragilityCurve_tblFragilityCurveSet" Association="AssetToolDatabaseModel.Store.FK_tlkpFragilityCurve_tblFragilityCurveSet">
+            <End Role="tblFragilityCurveSet" EntitySet="tblFragilityCurveSet" />
+            <End Role="tlkpFragilityCurve" EntitySet="tlkpFragilityCurve" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tlkpFragilityCurve_tlkpAssetType" Association="AssetToolDatabaseModel.Store.FK_tlkpFragilityCurve_tlkpAssetType">
+            <End Role="tlkpAssetType" EntitySet="tlkpAssetType" />
+            <End Role="tlkpFragilityCurve" EntitySet="tlkpFragilityCurve" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tlkpFragilityCurve_tlkpConditionGrade" Association="AssetToolDatabaseModel.Store.FK_tlkpFragilityCurve_tlkpConditionGrade">
+            <End Role="tlkpConditionGrade" EntitySet="tlkpConditionGrade" />
+            <End Role="tlkpFragilityCurve" EntitySet="tlkpFragilityCurve" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblAsset">
+          <Key>
+            <PropertyRef Name="AssetID" />
+          </Key>
+          <Property Name="ObjectID" Type="int" />
+          <Property Name="AssetID" Type="int" Nullable="false" />
+          <Property Name="AssetName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssetTypeID" Type="int" />
+          <Property Name="ConditionGrade" Type="nvarchar" MaxLength="5" />
+          <Property Name="AssetLength" Type="real" />
+          <Property Name="CrestLevel" Type="real" />
+          <Property Name="GroundLevel" Type="real" />
+          <Property Name="LoadingLocationID" Type="int" />
+        </EntityType>
+        <EntityType Name="tblEvents">
+          <Key>
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="EventID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Included" Type="bit" />
+          <Property Name="OutputType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Output" Type="nvarchar" MaxLength="50" />
+          <Property Name="EventDamage" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblEventSetting">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="EventID" Type="int" />
+          <Property Name="AssetID" Type="int" />
+          <Property Name="FailureMode" Type="nvarchar" MaxLength="50" />
+          <Property Name="WaterLevel" Type="real" />
+        </EntityType>
+        <EntityType Name="tblFragilityCurveSet">
+          <Key>
+            <PropertyRef Name="FragilityCurveSetID" />
+          </Key>
+          <Property Name="FragilityCurveSetID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblLoadingLevel">
+          <Key>
+            <PropertyRef Name="ObjectID" />
+          </Key>
+          <Property Name="ObjectID" Type="int" Nullable="false" />
+          <Property Name="LoadingLocationID" Type="int" />
+          <Property Name="LoadingScenarioID" Type="int" />
+          <Property Name="ReturnPeriod" Type="int" />
+          <Property Name="WaterLevel" Type="real" />
+        </EntityType>
+        <EntityType Name="tblLoadingLocation">
+          <Key>
+            <PropertyRef Name="LoadingLocationID" />
+          </Key>
+          <Property Name="LoadingLocationID" Type="int" Nullable="false" />
+          <Property Name="LevelLoadingPointName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Easting" Type="nvarchar" MaxLength="50" />
+          <Property Name="Northing" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblLoadingScenario">
+          <Key>
+            <PropertyRef Name="LoadingScenarioID" />
+          </Key>
+          <Property Name="LoadingScenarioID" Type="int" Nullable="false" />
+          <Property Name="LoadingScenarioName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblRiskResult">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="RiskRunID" Type="int" />
+          <Property Name="AssetID" Type="int" />
+          <Property Name="RiskBestEstimate" Type="real" />
+          <Property Name="RiskLowerEstimate" Type="real" />
+          <Property Name="RiskUpperEstimate" Type="real" />
+          <Property Name="Contribution" Type="real" />
+        </EntityType>
+        <EntityType Name="tblRiskRun">
+          <Key>
+            <PropertyRef Name="RiskRunID" />
+          </Key>
+          <Property Name="RiskRunID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="FragilityCurveSetID" Type="int" />
+          <Property Name="LoadingScenarioID" Type="int" />
+          <Property Name="Time" Type="datetime" />
+          <Property Name="TotalRisk" Type="real" />
+        </EntityType>
+        <EntityType Name="tlkpAssetType">
+          <Key>
+            <PropertyRef Name="AssetTypeID" />
+          </Key>
+          <Property Name="ObjectID" Type="int" />
+          <Property Name="AssetTypeID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tlkpConditionGrade">
+          <Key>
+            <PropertyRef Name="ConditionGrade" />
+          </Key>
+          <Property Name="ObjectID" Type="int" />
+          <Property Name="ConditionGrade" Type="nvarchar" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="tlkpFragilityCurve">
+          <Key>
+            <PropertyRef Name="ObjectID" />
+          </Key>
+          <Property Name="ObjectID" Type="int" Nullable="false" />
+          <Property Name="FragilityCurveSetID" Type="int" />
+          <Property Name="AssetTypeID" Type="int" />
+          <Property Name="ConditionGrade" Type="nvarchar" MaxLength="5" />
+          <Property Name="X" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProbabilityBestEstimate" Type="real" />
+          <Property Name="ProbabilityUpperEstimate" Type="real" />
+          <Property Name="ProbabilityLowerEstimate" Type="real" />
+        </EntityType>
+        <EntityType Name="tlkpImpactType">
+          <Key>
+            <PropertyRef Name="ImpactID" />
+          </Key>
+          <Property Name="ImpactID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShortDescription" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_tblAsset_tlkpAssetType">
+          <End Role="tlkpAssetType" Type="AssetToolDatabaseModel.Store.tlkpAssetType" Multiplicity="0..1" />
+          <End Role="tblAsset" Type="AssetToolDatabaseModel.Store.tblAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlkpAssetType">
+              <PropertyRef Name="AssetTypeID" />
+            </Principal>
+            <Dependent Role="tblAsset">
+              <PropertyRef Name="AssetTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAsset_tlkpConditionGrade">
+          <End Role="tlkpConditionGrade" Type="AssetToolDatabaseModel.Store.tlkpConditionGrade" Multiplicity="0..1" />
+          <End Role="tblAsset" Type="AssetToolDatabaseModel.Store.tblAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlkpConditionGrade">
+              <PropertyRef Name="ConditionGrade" />
+            </Principal>
+            <Dependent Role="tblAsset">
+              <PropertyRef Name="ConditionGrade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblEventSetting_tblAsset">
+          <End Role="tblAsset" Type="AssetToolDatabaseModel.Store.tblAsset" Multiplicity="0..1" />
+          <End Role="tblEventSetting" Type="AssetToolDatabaseModel.Store.tblEventSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAsset">
+              <PropertyRef Name="AssetID" />
+            </Principal>
+            <Dependent Role="tblEventSetting">
+              <PropertyRef Name="AssetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblEventSetting_tblEvents">
+          <End Role="tblEvents" Type="AssetToolDatabaseModel.Store.tblEvents" Multiplicity="0..1" />
+          <End Role="tblEventSetting" Type="AssetToolDatabaseModel.Store.tblEventSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEvents">
+              <PropertyRef Name="EventID" />
+            </Principal>
+            <Dependent Role="tblEventSetting">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblLoadingLevel_tblLoadingLocation">
+          <End Role="tblLoadingLocation" Type="AssetToolDatabaseModel.Store.tblLoadingLocation" Multiplicity="0..1" />
+          <End Role="tblLoadingLevel" Type="AssetToolDatabaseModel.Store.tblLoadingLevel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoadingLocation">
+              <PropertyRef Name="LoadingLocationID" />
+            </Principal>
+            <Dependent Role="tblLoadingLevel">
+              <PropertyRef Name="LoadingLocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblLoadingLevel_tblLoadingScenario">
+          <End Role="tblLoadingScenario" Type="AssetToolDatabaseModel.Store.tblLoadingScenario" Multiplicity="0..1" />
+          <End Role="tblLoadingLevel" Type="AssetToolDatabaseModel.Store.tblLoadingLevel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoadingScenario">
+              <PropertyRef Name="LoadingScenarioID" />
+            </Principal>
+            <Dependent Role="tblLoadingLevel">
+              <PropertyRef Name="LoadingScenarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRiskResult_tblAsset">
+          <End Role="tblAsset" Type="AssetToolDatabaseModel.Store.tblAsset" Multiplicity="0..1" />
+          <End Role="tblRiskResult" Type="AssetToolDatabaseModel.Store.tblRiskResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAsset">
+              <PropertyRef Name="AssetID" />
+            </Principal>
+            <Dependent Role="tblRiskResult">
+              <PropertyRef Name="AssetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRiskResult_tblRiskRun">
+          <End Role="tblRiskRun" Type="AssetToolDatabaseModel.Store.tblRiskRun" Multiplicity="0..1" />
+          <End Role="tblRiskResult" Type="AssetToolDatabaseModel.Store.tblRiskResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRiskRun">
+              <PropertyRef Name="RiskRunID" />
+            </Principal>
+            <Dependent Role="tblRiskResult">
+              <PropertyRef Name="RiskRunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRiskRun_tblFragilityCurveSet">
+          <End Role="tblFragilityCurveSet" Type="AssetToolDatabaseModel.Store.tblFragilityCurveSet" Multiplicity="0..1" />
+          <End Role="tblRiskRun" Type="AssetToolDatabaseModel.Store.tblRiskRun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFragilityCurveSet">
+              <PropertyRef Name="FragilityCurveSetID" />
+            </Principal>
+            <Dependent Role="tblRiskRun">
+              <PropertyRef Name="FragilityCurveSetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRiskRun_tblLoadingScenario">
+          <End Role="tblLoadingScenario" Type="AssetToolDatabaseModel.Store.tblLoadingScenario" Multiplicity="0..1" />
+          <End Role="tblRiskRun" Type="AssetToolDatabaseModel.Store.tblRiskRun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoadingScenario">
+              <PropertyRef Name="LoadingScenarioID" />
+            </Principal>
+            <Dependent Role="tblRiskRun">
+              <PropertyRef Name="LoadingScenarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tlkpFragilityCurve_tblFragilityCurveSet">
+          <End Role="tblFragilityCurveSet" Type="AssetToolDatabaseModel.Store.tblFragilityCurveSet" Multiplicity="0..1" />
+          <End Role="tlkpFragilityCurve" Type="AssetToolDatabaseModel.Store.tlkpFragilityCurve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFragilityCurveSet">
+              <PropertyRef Name="FragilityCurveSetID" />
+            </Principal>
+            <Dependent Role="tlkpFragilityCurve">
+              <PropertyRef Name="FragilityCurveSetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tlkpFragilityCurve_tlkpAssetType">
+          <End Role="tlkpAssetType" Type="AssetToolDatabaseModel.Store.tlkpAssetType" Multiplicity="0..1" />
+          <End Role="tlkpFragilityCurve" Type="AssetToolDatabaseModel.Store.tlkpFragilityCurve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlkpAssetType">
+              <PropertyRef Name="AssetTypeID" />
+            </Principal>
+            <Dependent Role="tlkpFragilityCurve">
+              <PropertyRef Name="AssetTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tlkpFragilityCurve_tlkpConditionGrade">
+          <End Role="tlkpConditionGrade" Type="AssetToolDatabaseModel.Store.tlkpConditionGrade" Multiplicity="0..1" />
+          <End Role="tlkpFragilityCurve" Type="AssetToolDatabaseModel.Store.tlkpFragilityCurve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlkpConditionGrade">
+              <PropertyRef Name="ConditionGrade" />
+            </Principal>
+            <Dependent Role="tlkpFragilityCurve">
+              <PropertyRef Name="ConditionGrade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AssetToolDatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AssetToolDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAssets" EntityType="AssetToolDatabaseModel.tblAsset" />
+          <EntitySet Name="tblEvents" EntityType="AssetToolDatabaseModel.tblEvent" />
+          <EntitySet Name="tblEventSettings" EntityType="AssetToolDatabaseModel.tblEventSetting" />
+          <EntitySet Name="tblFragilityCurveSets" EntityType="AssetToolDatabaseModel.tblFragilityCurveSet" />
+          <EntitySet Name="tblLoadingLevels" EntityType="AssetToolDatabaseModel.tblLoadingLevel" />
+          <EntitySet Name="tblLoadingLocations" EntityType="AssetToolDatabaseModel.tblLoadingLocation" />
+          <EntitySet Name="tblLoadingScenarios" EntityType="AssetToolDatabaseModel.tblLoadingScenario" />
+          <EntitySet Name="tblRiskResults" EntityType="AssetToolDatabaseModel.tblRiskResult" />
+          <EntitySet Name="tblRiskRuns" EntityType="AssetToolDatabaseModel.tblRiskRun" />
+          <EntitySet Name="tlkpAssetTypes" EntityType="AssetToolDatabaseModel.tlkpAssetType" />
+          <EntitySet Name="tlkpConditionGrades" EntityType="AssetToolDatabaseModel.tlkpConditionGrade" />
+          <EntitySet Name="tlkpFragilityCurves" EntityType="AssetToolDatabaseModel.tlkpFragilityCurve" />
+          <EntitySet Name="tlkpImpactTypes" EntityType="AssetToolDatabaseModel.tlkpImpactType" />
+          <AssociationSet Name="FK_tblAsset_tlkpAssetType" Association="AssetToolDatabaseModel.FK_tblAsset_tlkpAssetType">
+            <End Role="tlkpAssetType" EntitySet="tlkpAssetTypes" />
+            <End Role="tblAsset" EntitySet="tblAssets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblAsset_tlkpConditionGrade" Association="AssetToolDatabaseModel.FK_tblAsset_tlkpConditionGrade">
+            <End Role="tlkpConditionGrade" EntitySet="tlkpConditionGrades" />
+            <End Role="tblAsset" EntitySet="tblAssets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblEventSetting_tblAsset" Association="AssetToolDatabaseModel.FK_tblEventSetting_tblAsset">
+            <End Role="tblAsset" EntitySet="tblAssets" />
+            <End Role="tblEventSetting" EntitySet="tblEventSettings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRiskResult_tblAsset" Association="AssetToolDatabaseModel.FK_tblRiskResult_tblAsset">
+            <End Role="tblAsset" EntitySet="tblAssets" />
+            <End Role="tblRiskResult" EntitySet="tblRiskResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblEventSetting_tblEvents" Association="AssetToolDatabaseModel.FK_tblEventSetting_tblEvents">
+            <End Role="tblEvents" EntitySet="tblEvents" />
+            <End Role="tblEventSetting" EntitySet="tblEventSettings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRiskRun_tblFragilityCurveSet" Association="AssetToolDatabaseModel.FK_tblRiskRun_tblFragilityCurveSet">
+            <End Role="tblFragilityCurveSet" EntitySet="tblFragilityCurveSets" />
+            <End Role="tblRiskRun" EntitySet="tblRiskRuns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tlkpFragilityCurve_tblFragilityCurveSet" Association="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tblFragilityCurveSet">
+            <End Role="tblFragilityCurveSet" EntitySet="tblFragilityCurveSets" />
+            <End Role="tlkpFragilityCurve" EntitySet="tlkpFragilityCurves" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblLoadingLevel_tblLoadingLocation" Association="AssetToolDatabaseModel.FK_tblLoadingLevel_tblLoadingLocation">
+            <End Role="tblLoadingLocation" EntitySet="tblLoadingLocations" />
+            <End Role="tblLoadingLevel" EntitySet="tblLoadingLevels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblLoadingLevel_tblLoadingScenario" Association="AssetToolDatabaseModel.FK_tblLoadingLevel_tblLoadingScenario">
+            <End Role="tblLoadingScenario" EntitySet="tblLoadingScenarios" />
+            <End Role="tblLoadingLevel" EntitySet="tblLoadingLevels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRiskRun_tblLoadingScenario" Association="AssetToolDatabaseModel.FK_tblRiskRun_tblLoadingScenario">
+            <End Role="tblLoadingScenario" EntitySet="tblLoadingScenarios" />
+            <End Role="tblRiskRun" EntitySet="tblRiskRuns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblRiskResult_tblRiskRun" Association="AssetToolDatabaseModel.FK_tblRiskResult_tblRiskRun">
+            <End Role="tblRiskRun" EntitySet="tblRiskRuns" />
+            <End Role="tblRiskResult" EntitySet="tblRiskResults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tlkpFragilityCurve_tlkpAssetType" Association="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tlkpAssetType">
+            <End Role="tlkpAssetType" EntitySet="tlkpAssetTypes" />
+            <End Role="tlkpFragilityCurve" EntitySet="tlkpFragilityCurves" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tlkpFragilityCurve_tlkpConditionGrade" Association="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tlkpConditionGrade">
+            <End Role="tlkpConditionGrade" EntitySet="tlkpConditionGrades" />
+            <End Role="tlkpFragilityCurve" EntitySet="tlkpFragilityCurves" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblAsset">
+          <Key>
+            <PropertyRef Name="AssetID" />
+          </Key>
+          <Property Name="ObjectID" Type="Int32" />
+          <Property Name="AssetID" Type="Int32" Nullable="false" />
+          <Property Name="AssetName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AssetTypeID" Type="Int32" />
+          <Property Name="ConditionGrade" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="AssetLength" Type="Single" />
+          <Property Name="CrestLevel" Type="Single" />
+          <Property Name="GroundLevel" Type="Single" />
+          <Property Name="LoadingLocationID" Type="Int32" />
+          <NavigationProperty Name="tlkpAssetType" Relationship="AssetToolDatabaseModel.FK_tblAsset_tlkpAssetType" FromRole="tblAsset" ToRole="tlkpAssetType" />
+          <NavigationProperty Name="tlkpConditionGrade" Relationship="AssetToolDatabaseModel.FK_tblAsset_tlkpConditionGrade" FromRole="tblAsset" ToRole="tlkpConditionGrade" />
+          <NavigationProperty Name="tblEventSettings" Relationship="AssetToolDatabaseModel.FK_tblEventSetting_tblAsset" FromRole="tblAsset" ToRole="tblEventSetting" />
+          <NavigationProperty Name="tblRiskResults" Relationship="AssetToolDatabaseModel.FK_tblRiskResult_tblAsset" FromRole="tblAsset" ToRole="tblRiskResult" />
+        </EntityType>
+        <EntityType Name="tblEvent">
+          <Key>
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="EventID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Included" Type="Boolean" />
+          <Property Name="OutputType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Output" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EventDamage" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblEventSettings" Relationship="AssetToolDatabaseModel.FK_tblEventSetting_tblEvents" FromRole="tblEvents" ToRole="tblEventSetting" />
+        </EntityType>
+        <EntityType Name="tblEventSetting">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="EventID" Type="Int32" />
+          <Property Name="AssetID" Type="Int32" />
+          <Property Name="FailureMode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WaterLevel" Type="Single" />
+          <NavigationProperty Name="tblAsset" Relationship="AssetToolDatabaseModel.FK_tblEventSetting_tblAsset" FromRole="tblEventSetting" ToRole="tblAsset" />
+          <NavigationProperty Name="tblEvent" Relationship="AssetToolDatabaseModel.FK_tblEventSetting_tblEvents" FromRole="tblEventSetting" ToRole="tblEvents" />
+        </EntityType>
+        <EntityType Name="tblFragilityCurveSet">
+          <Key>
+            <PropertyRef Name="FragilityCurveSetID" />
+          </Key>
+          <Property Name="FragilityCurveSetID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblRiskRuns" Relationship="AssetToolDatabaseModel.FK_tblRiskRun_tblFragilityCurveSet" FromRole="tblFragilityCurveSet" ToRole="tblRiskRun" />
+          <NavigationProperty Name="tlkpFragilityCurves" Relationship="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tblFragilityCurveSet" FromRole="tblFragilityCurveSet" ToRole="tlkpFragilityCurve" />
+        </EntityType>
+        <EntityType Name="tblLoadingLevel">
+          <Key>
+            <PropertyRef Name="ObjectID" />
+          </Key>
+          <Property Name="ObjectID" Type="Int32" Nullable="false" />
+          <Property Name="LoadingLocationID" Type="Int32" />
+          <Property Name="LoadingScenarioID" Type="Int32" />
+          <Property Name="ReturnPeriod" Type="Int32" />
+          <Property Name="WaterLevel" Type="Single" />
+          <NavigationProperty Name="tblLoadingLocation" Relationship="AssetToolDatabaseModel.FK_tblLoadingLevel_tblLoadingLocation" FromRole="tblLoadingLevel" ToRole="tblLoadingLocation" />
+          <NavigationProperty Name="tblLoadingScenario" Relationship="AssetToolDatabaseModel.FK_tblLoadingLevel_tblLoadingScenario" FromRole="tblLoadingLevel" ToRole="tblLoadingScenario" />
+        </EntityType>
+        <EntityType Name="tblLoadingLocation">
+          <Key>
+            <PropertyRef Name="LoadingLocationID" />
+          </Key>
+          <Property Name="LoadingLocationID" Type="Int32" Nullable="false" />
+          <Property Name="LevelLoadingPointName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Easting" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Northing" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblLoadingLevels" Relationship="AssetToolDatabaseModel.FK_tblLoadingLevel_tblLoadingLocation" FromRole="tblLoadingLocation" ToRole="tblLoadingLevel" />
+        </EntityType>
+        <EntityType Name="tblLoadingScenario">
+          <Key>
+            <PropertyRef Name="LoadingScenarioID" />
+          </Key>
+          <Property Name="LoadingScenarioID" Type="Int32" Nullable="false" />
+          <Property Name="LoadingScenarioName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblLoadingLevels" Relationship="AssetToolDatabaseModel.FK_tblLoadingLevel_tblLoadingScenario" FromRole="tblLoadingScenario" ToRole="tblLoadingLevel" />
+          <NavigationProperty Name="tblRiskRuns" Relationship="AssetToolDatabaseModel.FK_tblRiskRun_tblLoadingScenario" FromRole="tblLoadingScenario" ToRole="tblRiskRun" />
+        </EntityType>
+        <EntityType Name="tblRiskResult">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="RiskRunID" Type="Int32" />
+          <Property Name="AssetID" Type="Int32" />
+          <Property Name="RiskBestEstimate" Type="Single" />
+          <Property Name="RiskLowerEstimate" Type="Single" />
+          <Property Name="RiskUpperEstimate" Type="Single" />
+          <Property Name="Contribution" Type="Single" />
+          <NavigationProperty Name="tblAsset" Relationship="AssetToolDatabaseModel.FK_tblRiskResult_tblAsset" FromRole="tblRiskResult" ToRole="tblAsset" />
+          <NavigationProperty Name="tblRiskRun" Relationship="AssetToolDatabaseModel.FK_tblRiskResult_tblRiskRun" FromRole="tblRiskResult" ToRole="tblRiskRun" />
+        </EntityType>
+        <EntityType Name="tblRiskRun">
+          <Key>
+            <PropertyRef Name="RiskRunID" />
+          </Key>
+          <Property Name="RiskRunID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FragilityCurveSetID" Type="Int32" />
+          <Property Name="LoadingScenarioID" Type="Int32" />
+          <Property Name="Time" Type="DateTime" Precision="3" />
+          <Property Name="TotalRisk" Type="Single" />
+          <NavigationProperty Name="tblFragilityCurveSet" Relationship="AssetToolDatabaseModel.FK_tblRiskRun_tblFragilityCurveSet" FromRole="tblRiskRun" ToRole="tblFragilityCurveSet" />
+          <NavigationProperty Name="tblLoadingScenario" Relationship="AssetToolDatabaseModel.FK_tblRiskRun_tblLoadingScenario" FromRole="tblRiskRun" ToRole="tblLoadingScenario" />
+          <NavigationProperty Name="tblRiskResults" Relationship="AssetToolDatabaseModel.FK_tblRiskResult_tblRiskRun" FromRole="tblRiskRun" ToRole="tblRiskResult" />
+        </EntityType>
+        <EntityType Name="tlkpAssetType">
+          <Key>
+            <PropertyRef Name="AssetTypeID" />
+          </Key>
+          <Property Name="ObjectID" Type="Int32" />
+          <Property Name="AssetTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblAssets" Relationship="AssetToolDatabaseModel.FK_tblAsset_tlkpAssetType" FromRole="tlkpAssetType" ToRole="tblAsset" />
+          <NavigationProperty Name="tlkpFragilityCurves" Relationship="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tlkpAssetType" FromRole="tlkpAssetType" ToRole="tlkpFragilityCurve" />
+        </EntityType>
+        <EntityType Name="tlkpConditionGrade">
+          <Key>
+            <PropertyRef Name="ConditionGrade" />
+          </Key>
+          <Property Name="ObjectID" Type="Int32" />
+          <Property Name="ConditionGrade" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblAssets" Relationship="AssetToolDatabaseModel.FK_tblAsset_tlkpConditionGrade" FromRole="tlkpConditionGrade" ToRole="tblAsset" />
+          <NavigationProperty Name="tlkpFragilityCurves" Relationship="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tlkpConditionGrade" FromRole="tlkpConditionGrade" ToRole="tlkpFragilityCurve" />
+        </EntityType>
+        <EntityType Name="tlkpFragilityCurve">
+          <Key>
+            <PropertyRef Name="ObjectID" />
+          </Key>
+          <Property Name="ObjectID" Type="Int32" Nullable="false" />
+          <Property Name="FragilityCurveSetID" Type="Int32" />
+          <Property Name="AssetTypeID" Type="Int32" />
+          <Property Name="ConditionGrade" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="X" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ProbabilityBestEstimate" Type="Single" />
+          <Property Name="ProbabilityUpperEstimate" Type="Single" />
+          <Property Name="ProbabilityLowerEstimate" Type="Single" />
+          <NavigationProperty Name="tblFragilityCurveSet" Relationship="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tblFragilityCurveSet" FromRole="tlkpFragilityCurve" ToRole="tblFragilityCurveSet" />
+          <NavigationProperty Name="tlkpAssetType" Relationship="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tlkpAssetType" FromRole="tlkpFragilityCurve" ToRole="tlkpAssetType" />
+          <NavigationProperty Name="tlkpConditionGrade" Relationship="AssetToolDatabaseModel.FK_tlkpFragilityCurve_tlkpConditionGrade" FromRole="tlkpFragilityCurve" ToRole="tlkpConditionGrade" />
+        </EntityType>
+        <EntityType Name="tlkpImpactType">
+          <Key>
+            <PropertyRef Name="ImpactID" />
+          </Key>
+          <Property Name="ImpactID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ShortDescription" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_tblAsset_tlkpAssetType">
+          <End Role="tlkpAssetType" Type="AssetToolDatabaseModel.tlkpAssetType" Multiplicity="0..1" />
+          <End Role="tblAsset" Type="AssetToolDatabaseModel.tblAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlkpAssetType">
+              <PropertyRef Name="AssetTypeID" />
+            </Principal>
+            <Dependent Role="tblAsset">
+              <PropertyRef Name="AssetTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblAsset_tlkpConditionGrade">
+          <End Role="tlkpConditionGrade" Type="AssetToolDatabaseModel.tlkpConditionGrade" Multiplicity="0..1" />
+          <End Role="tblAsset" Type="AssetToolDatabaseModel.tblAsset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlkpConditionGrade">
+              <PropertyRef Name="ConditionGrade" />
+            </Principal>
+            <Dependent Role="tblAsset">
+              <PropertyRef Name="ConditionGrade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblEventSetting_tblAsset">
+          <End Role="tblAsset" Type="AssetToolDatabaseModel.tblAsset" Multiplicity="0..1" />
+          <End Role="tblEventSetting" Type="AssetToolDatabaseModel.tblEventSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAsset">
+              <PropertyRef Name="AssetID" />
+            </Principal>
+            <Dependent Role="tblEventSetting">
+              <PropertyRef Name="AssetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRiskResult_tblAsset">
+          <End Role="tblAsset" Type="AssetToolDatabaseModel.tblAsset" Multiplicity="0..1" />
+          <End Role="tblRiskResult" Type="AssetToolDatabaseModel.tblRiskResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAsset">
+              <PropertyRef Name="AssetID" />
+            </Principal>
+            <Dependent Role="tblRiskResult">
+              <PropertyRef Name="AssetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblEventSetting_tblEvents">
+          <End Role="tblEvents" Type="AssetToolDatabaseModel.tblEvent" Multiplicity="0..1" />
+          <End Role="tblEventSetting" Type="AssetToolDatabaseModel.tblEventSetting" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEvents">
+              <PropertyRef Name="EventID" />
+            </Principal>
+            <Dependent Role="tblEventSetting">
+              <PropertyRef Name="EventID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRiskRun_tblFragilityCurveSet">
+          <End Role="tblFragilityCurveSet" Type="AssetToolDatabaseModel.tblFragilityCurveSet" Multiplicity="0..1" />
+          <End Role="tblRiskRun" Type="AssetToolDatabaseModel.tblRiskRun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFragilityCurveSet">
+              <PropertyRef Name="FragilityCurveSetID" />
+            </Principal>
+            <Dependent Role="tblRiskRun">
+              <PropertyRef Name="FragilityCurveSetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tlkpFragilityCurve_tblFragilityCurveSet">
+          <End Role="tblFragilityCurveSet" Type="AssetToolDatabaseModel.tblFragilityCurveSet" Multiplicity="0..1" />
+          <End Role="tlkpFragilityCurve" Type="AssetToolDatabaseModel.tlkpFragilityCurve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFragilityCurveSet">
+              <PropertyRef Name="FragilityCurveSetID" />
+            </Principal>
+            <Dependent Role="tlkpFragilityCurve">
+              <PropertyRef Name="FragilityCurveSetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblLoadingLevel_tblLoadingLocation">
+          <End Role="tblLoadingLocation" Type="AssetToolDatabaseModel.tblLoadingLocation" Multiplicity="0..1" />
+          <End Role="tblLoadingLevel" Type="AssetToolDatabaseModel.tblLoadingLevel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoadingLocation">
+              <PropertyRef Name="LoadingLocationID" />
+            </Principal>
+            <Dependent Role="tblLoadingLevel">
+              <PropertyRef Name="LoadingLocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblLoadingLevel_tblLoadingScenario">
+          <End Role="tblLoadingScenario" Type="AssetToolDatabaseModel.tblLoadingScenario" Multiplicity="0..1" />
+          <End Role="tblLoadingLevel" Type="AssetToolDatabaseModel.tblLoadingLevel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoadingScenario">
+              <PropertyRef Name="LoadingScenarioID" />
+            </Principal>
+            <Dependent Role="tblLoadingLevel">
+              <PropertyRef Name="LoadingScenarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRiskRun_tblLoadingScenario">
+          <End Role="tblLoadingScenario" Type="AssetToolDatabaseModel.tblLoadingScenario" Multiplicity="0..1" />
+          <End Role="tblRiskRun" Type="AssetToolDatabaseModel.tblRiskRun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblLoadingScenario">
+              <PropertyRef Name="LoadingScenarioID" />
+            </Principal>
+            <Dependent Role="tblRiskRun">
+              <PropertyRef Name="LoadingScenarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblRiskResult_tblRiskRun">
+          <End Role="tblRiskRun" Type="AssetToolDatabaseModel.tblRiskRun" Multiplicity="0..1" />
+          <End Role="tblRiskResult" Type="AssetToolDatabaseModel.tblRiskResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRiskRun">
+              <PropertyRef Name="RiskRunID" />
+            </Principal>
+            <Dependent Role="tblRiskResult">
+              <PropertyRef Name="RiskRunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tlkpFragilityCurve_tlkpAssetType">
+          <End Role="tlkpAssetType" Type="AssetToolDatabaseModel.tlkpAssetType" Multiplicity="0..1" />
+          <End Role="tlkpFragilityCurve" Type="AssetToolDatabaseModel.tlkpFragilityCurve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlkpAssetType">
+              <PropertyRef Name="AssetTypeID" />
+            </Principal>
+            <Dependent Role="tlkpFragilityCurve">
+              <PropertyRef Name="AssetTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tlkpFragilityCurve_tlkpConditionGrade">
+          <End Role="tlkpConditionGrade" Type="AssetToolDatabaseModel.tlkpConditionGrade" Multiplicity="0..1" />
+          <End Role="tlkpFragilityCurve" Type="AssetToolDatabaseModel.tlkpFragilityCurve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlkpConditionGrade">
+              <PropertyRef Name="ConditionGrade" />
+            </Principal>
+            <Dependent Role="tlkpFragilityCurve">
+              <PropertyRef Name="ConditionGrade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AssetToolDatabaseModelStoreContainer" CdmEntityContainer="AssetToolDatabaseEntities">
+          <EntitySetMapping Name="tblAssets">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tblAsset">
+              <MappingFragment StoreEntitySet="tblAsset">
+                <ScalarProperty Name="ObjectID" ColumnName="ObjectID" />
+                <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+                <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+                <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+                <ScalarProperty Name="ConditionGrade" ColumnName="ConditionGrade" />
+                <ScalarProperty Name="AssetLength" ColumnName="AssetLength" />
+                <ScalarProperty Name="CrestLevel" ColumnName="CrestLevel" />
+                <ScalarProperty Name="GroundLevel" ColumnName="GroundLevel" />
+                <ScalarProperty Name="LoadingLocationID" ColumnName="LoadingLocationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEvents">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tblEvent">
+              <MappingFragment StoreEntitySet="tblEvents">
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Included" ColumnName="Included" />
+                <ScalarProperty Name="OutputType" ColumnName="OutputType" />
+                <ScalarProperty Name="Output" ColumnName="Output" />
+                <ScalarProperty Name="EventDamage" ColumnName="EventDamage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEventSettings">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tblEventSetting">
+              <MappingFragment StoreEntitySet="tblEventSetting">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+                <ScalarProperty Name="FailureMode" ColumnName="FailureMode" />
+                <ScalarProperty Name="WaterLevel" ColumnName="WaterLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblFragilityCurveSets">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tblFragilityCurveSet">
+              <MappingFragment StoreEntitySet="tblFragilityCurveSet">
+                <ScalarProperty Name="FragilityCurveSetID" ColumnName="FragilityCurveSetID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLoadingLevels">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tblLoadingLevel">
+              <MappingFragment StoreEntitySet="tblLoadingLevel">
+                <ScalarProperty Name="ObjectID" ColumnName="ObjectID" />
+                <ScalarProperty Name="LoadingLocationID" ColumnName="LoadingLocationID" />
+                <ScalarProperty Name="LoadingScenarioID" ColumnName="LoadingScenarioID" />
+                <ScalarProperty Name="ReturnPeriod" ColumnName="ReturnPeriod" />
+                <ScalarProperty Name="WaterLevel" ColumnName="WaterLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLoadingLocations">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tblLoadingLocation">
+              <MappingFragment StoreEntitySet="tblLoadingLocation">
+                <ScalarProperty Name="LoadingLocationID" ColumnName="LoadingLocationID" />
+                <ScalarProperty Name="LevelLoadingPointName" ColumnName="LevelLoadingPointName" />
+                <ScalarProperty Name="Easting" ColumnName="Easting" />
+                <ScalarProperty Name="Northing" ColumnName="Northing" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLoadingScenarios">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tblLoadingScenario">
+              <MappingFragment StoreEntitySet="tblLoadingScenario">
+                <ScalarProperty Name="LoadingScenarioID" ColumnName="LoadingScenarioID" />
+                <ScalarProperty Name="LoadingScenarioName" ColumnName="LoadingScenarioName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRiskResults">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tblRiskResult">
+              <MappingFragment StoreEntitySet="tblRiskResult">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RiskRunID" ColumnName="RiskRunID" />
+                <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+                <ScalarProperty Name="RiskBestEstimate" ColumnName="RiskBestEstimate" />
+                <ScalarProperty Name="RiskLowerEstimate" ColumnName="RiskLowerEstimate" />
+                <ScalarProperty Name="RiskUpperEstimate" ColumnName="RiskUpperEstimate" />
+                <ScalarProperty Name="Contribution" ColumnName="Contribution" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRiskRuns">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tblRiskRun">
+              <MappingFragment StoreEntitySet="tblRiskRun">
+                <ScalarProperty Name="RiskRunID" ColumnName="RiskRunID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FragilityCurveSetID" ColumnName="FragilityCurveSetID" />
+                <ScalarProperty Name="LoadingScenarioID" ColumnName="LoadingScenarioID" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="TotalRisk" ColumnName="TotalRisk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tlkpAssetTypes">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tlkpAssetType">
+              <MappingFragment StoreEntitySet="tlkpAssetType">
+                <ScalarProperty Name="ObjectID" ColumnName="ObjectID" />
+                <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tlkpConditionGrades">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tlkpConditionGrade">
+              <MappingFragment StoreEntitySet="tlkpConditionGrade">
+                <ScalarProperty Name="ObjectID" ColumnName="ObjectID" />
+                <ScalarProperty Name="ConditionGrade" ColumnName="ConditionGrade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tlkpFragilityCurves">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tlkpFragilityCurve">
+              <MappingFragment StoreEntitySet="tlkpFragilityCurve">
+                <ScalarProperty Name="ObjectID" ColumnName="ObjectID" />
+                <ScalarProperty Name="FragilityCurveSetID" ColumnName="FragilityCurveSetID" />
+                <ScalarProperty Name="AssetTypeID" ColumnName="AssetTypeID" />
+                <ScalarProperty Name="ConditionGrade" ColumnName="ConditionGrade" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="ProbabilityBestEstimate" ColumnName="ProbabilityBestEstimate" />
+                <ScalarProperty Name="ProbabilityUpperEstimate" ColumnName="ProbabilityUpperEstimate" />
+                <ScalarProperty Name="ProbabilityLowerEstimate" ColumnName="ProbabilityLowerEstimate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tlkpImpactTypes">
+            <EntityTypeMapping TypeName="AssetToolDatabaseModel.tlkpImpactType">
+              <MappingFragment StoreEntitySet="tlkpImpactType">
+                <ScalarProperty Name="ImpactID" ColumnName="ImpactID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
